@@ -6,7 +6,7 @@
   --secondary-color: rgb(220, 78, 78);
   --text-dark: #1f2937;
   --text-light: #6b7280;
-  --extra-light: #faf5ff;
+  --extra-light: pink;
   --max-width: 1200px;
 }
 
@@ -218,30 +218,54 @@ ul li a:hover {
   }
 }
 
-/* Dodatni CSS za sekciju O meni */
 
-.section__title{
-  color: palevioletred;
+#about .section__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-content {
   display: flex;
-  justify-content: space-between;
+  gap: 2rem;
   align-items: center;
+  text-align: left;
+  flex-wrap: wrap;
 }
 
 .about-text {
- flex: auto;
+  flex: 1;
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
 }
 
 .about-image img {
-  max-width: 100%;
-  height: 100%;
+  max-width: 300px;
+  height: 200px;
   border-radius: 8px;
- 
+  margin-bottom: 1rem;
 }
 
-/* Dodatni CSS za sekciju Projekti */
+@media only screen and (max-width: 768px) {
+  #about .section__container {
+    flex-direction: column;
+  }
+
+  .about-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-image img {
+    margin-bottom: 0; 
+  }
+}
+
+
 
 .project-lists {
   display: flex;
@@ -254,14 +278,14 @@ ul li a:hover {
   max-width: 250px;
   margin: 10px;
   padding: 20px;
-  border: 2px solid #f06292; /* Pink boja */
+  border: 2px solid #f06292; 
   border-radius: 8px;
   text-align: center;
   transition: border-color 0.3s ease;
 }
 
 .project-item:hover {
-  border-color: #ff4081; /* Tamnija nijansa pink boje za hover efekt */
+  border-color: #ff4081; 
   background-color: plum;
 }
 
@@ -273,21 +297,34 @@ ul li a:hover {
 
 .section__title{
   display: flex;
-  gap: 4rem;
+  color: #ff4081;
+  margin-bottom: 30px;
+ 
 
 }
-
+.section__title p{
+  color: gray;
+}
 .section {
   background-color: #f5f5f5;
   padding: 20px;
   text-align: center;
 }
+.section {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; 
+}
 
 .container {
-  position: relative;
+  position: relative; 
   max-width: 500px;
   width: 100%;
-  background: transparent; /* Pink boja */
+  background: transparent; 
   margin: 0 15px;
   padding: 10px 20px;
   border-radius: 7px;
@@ -300,19 +337,21 @@ ul li a:hover {
 }
 
 .skill-box:hover {
-  transform: scale(1.05); /* Povećava veličinu na hover */
+  transform: scale(1.05); 
 }
-
+.naslov{
+  color: #ff4081;
+}
 .skill-box .title {
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: #6b7280;
   transition: font-size 0.3s ease-in-out;
 }
 
 .skill-box:hover .title {
-  font-size: 12px; /* Smanjuje veličinu teksta na hover */
+  font-size: 12px; 
 }
 
 .skill-bar {
@@ -320,7 +359,7 @@ ul li a:hover {
   width: 100%;
   border-radius: 6px;
   margin-top: 6px;
-  background: rgba(255, 20, 147, 0.1); /* Pink boja s 10% prozirnosti */
+  background: rgba(255, 20, 147, 0.1); 
 }
 
 .skill-per {
@@ -329,7 +368,7 @@ ul li a:hover {
   height: 100%;
   width: 90%;
   border-radius: 6px;
-  background: palevioletred; /* Pink boja */
+  background: palevioletred;
   animation: progress 0.4s ease-in-out forwards;
   opacity: 0;
 }
@@ -368,7 +407,7 @@ ul li a:hover {
   color: #fff;
   padding: 2px 6px;
   border-radius: 3px;
-  background: pink; /* Pink boja */
+  background: pink; 
   z-index: 1;
 }
 
@@ -380,11 +419,46 @@ ul li a:hover {
   height: 10px;
   width: 10px;
   z-index: -1;
-  background-color: pink; /* Pink boja */
+  background-color: pink;
   transform: translateX(-50%) rotate(45deg);
 }
 
-/* Dodatna stilizacija i pravila responzivnosti prema potrebi */
+
+
+footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer__item {
+  font-size: 1rem;
+  color: #fff; 
+  text-align: center; 
+}
+
+
+@media only screen and (max-width: 600px) {
+  footer {
+    padding: 1rem 0.5rem;
+  }
+}
+
 
 @media only screen and (max-width: 768px) {
   .container {
@@ -402,8 +476,6 @@ ul li a:hover {
     display: flex;
   }
 }
-
-/* Dodatna stilizacija i pravila responzivnosti prema potrebi */
 
 @media only screen and (max-width: 768px) {
   .container {
@@ -453,7 +525,6 @@ ul li a:hover {
 }
 
 
-/* Dodatna stilizacija i pravila responzivnosti prema potrebi */
 
 @media only screen and (max-width: 600px) {
   .section__container {
@@ -488,7 +559,6 @@ ul li a:hover {
   }
 }
 
-/* Dodatna stilizacija i pravila responzivnosti prema potrebi */
 
 @media only screen and (max-width: 480px) {
   .about-content {
@@ -504,7 +574,6 @@ ul li a:hover {
     justify-content: center;
   }
 }
-
 
 
 
